@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "3edde93d-05b2-4c8f-a1f6-082121ff4d0a",
+		"name": "Fedex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get rates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<RateRequest xmlns=\"http://fedex.com/ws/rate/v13\">\n  <WebAuthenticationDetail>\n    <UserCredential>\n      <Key>bkjIgUhxdghtLw9L</Key>\n      <Password>6p8oOccHmDwuJZCyJs44wQ0Iw</Password>\n    </UserCredential>\n  </WebAuthenticationDetail>\n  <ClientDetail>\n    <AccountNumber>510087720</AccountNumber>\n    <MeterNumber>119238439</MeterNumber>\n    <Localization>\n      <LanguageCode>es</LanguageCode>\n      <LocaleCode>mx</LocaleCode>\n    </Localization>\n  </ClientDetail>\n  <Version>\n    <ServiceId>crs</ServiceId>\n    <Major>13</Major>\n    <Intermediate>0</Intermediate>\n    <Minor>0</Minor>\n  </Version>\n  <ReturnTransitAndCommit>true</ReturnTransitAndCommit>\n  <RequestedShipment>\n    <DropoffType>REGULAR_PICKUP</DropoffType>\n    <PackagingType>YOUR_PACKAGING</PackagingType>\n    <Shipper>\n      <Address>\n        <StreetLines></StreetLines>\n        <City></City>\n        <StateOrProvinceCode>XX</StateOrProvinceCode>\n        <PostalCode>64000</PostalCode>\n        <CountryCode>MX</CountryCode>\n      </Address>\n    </Shipper>\n    <Recipient>\n      <Address>\n        <StreetLines></StreetLines>\n        <City></City>\n        <StateOrProvinceCode>XX</StateOrProvinceCode>\n        <PostalCode>06500</PostalCode>\n        <CountryCode>MX</CountryCode>\n        <Residential>false</Residential>\n      </Address>\n    </Recipient>\n    <ShippingChargesPayment>\n      <PaymentType>SENDER</PaymentType>\n    </ShippingChargesPayment>\n    <RateRequestTypes>ACCOUNT</RateRequestTypes>\n    <PackageCount>1</PackageCount>\n    <RequestedPackageLineItems>\n      <GroupPackageCount>1</GroupPackageCount>\n      <Weight>\n        <Units>KG</Units>\n        <Value>1</Value>\n      </Weight>\n      <Dimensions>\n      <Length>10</Length>\n      <Width>10</Width>\n      <Height>10</Height>\n      <Units>CM</Units>\n      </Dimensions>\n    </RequestedPackageLineItems>\n  </RequestedShipment>\n</RateRequest>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wsbeta.fedex.com:443/xml",
+					"protocol": "https",
+					"host": [
+						"wsbeta",
+						"fedex",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"xml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
